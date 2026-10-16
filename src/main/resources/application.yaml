@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: obzharka
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/kvarta}
+    username: ${DB_USER:kvarta}
+    password: ${DB_PASSWORD:kvarta}
+    hikari:
+      maximum-pool-size: 5
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: validate
+  jackson:
+    property-naming-strategy: SNAKE_CASE
+    mapper:
+      accept-case-insensitive-enums: true
+
+server:
+  port: ${PORT:8080}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health
