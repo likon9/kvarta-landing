@@ -1,5 +1,7 @@
 // Адрес бэкенда. Локально: http://localhost:8080, на проде заменить адресом сервера.
-const API_BASE = 'http://localhost:8080';
+const API_BASE = ['localhost', '127.0.0.1'].includes(location.hostname)
+    ? 'http://localhost:8080'
+    : 'https://kvarta-landing.onrender.com';
 const PHONE_MSG = 'Введите белорусский номер, например +375 29 123-45-67';
 
 const form = document.getElementById('lead-form');
